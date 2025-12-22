@@ -12,6 +12,7 @@ env:
   SOURCE_REPO: github.com/newbie-jiang/www.rocketpi.club.git
   SOURCE_SUBDIR: rocketpi_src/base_samples
   TARGET_SUBDIR: .
+  CLONE_DIR: ${{ runner.temp }}/source-repo
 
 jobs:
   sync:
@@ -32,7 +33,8 @@ jobs:
             exit 1
           fi
 
-          git clone --depth 1 https://$SOURCE_PAT@$SOURCE_REPO source-repo
+          rm -rf "$CLONE_DIR"
+          git clone --depth 1 https://$SOURCE_PAT@$SOURCE_REPO "$CLONE_DIR"
 
       - name: Sync directory contents
         run: |
@@ -40,7 +42,7 @@ jobs:
           rsync -a --delete \
             --exclude '.git/' \
             --exclude '.github/' \
-            "source-repo/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
+            "$CLONE_DIR/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
 
       - name: Commit and push changes
         env:
