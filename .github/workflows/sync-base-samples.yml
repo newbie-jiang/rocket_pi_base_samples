@@ -11,7 +11,7 @@ on:
 env:
   SOURCE_REPO: github.com/newbie-jiang/www.rocketpi.club.git
   SOURCE_SUBDIR: rocketpi_src/base_samples
-  TARGET_SUBDIR: rocketpi_src/base_samples
+  TARGET_SUBDIR: .
 
 jobs:
   sync:
@@ -37,7 +37,10 @@ jobs:
       - name: Sync directory contents
         run: |
           mkdir -p "$TARGET_SUBDIR"
-          rsync -a --delete "source-repo/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
+          rsync -a --delete \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            "source-repo/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
 
       - name: Commit and push changes
         env:
