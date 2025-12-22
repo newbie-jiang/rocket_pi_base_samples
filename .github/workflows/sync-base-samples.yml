@@ -44,6 +44,7 @@ jobs:
           rsync -a --delete \
             --exclude '.git/' \
             --exclude '.github/' \
+            --exclude 'readme.md' \
             "$CLONE_DIR/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
 
       - name: Commit and push changes
