@@ -1,0 +1,44 @@
+## base_samples   （40个示例）
+
+更多资料请访问 https://www.rocketpi.club/
+
+- [x] rocketpi_led  （LED闪烁示例）
+- [x] rocketpi_key_scan （阻塞式按键扫描）
+- [x] rocketpi_key_irq （中断按键）
+- [x] rocketpi_key_multi_button（MultiButton按键库，适配短按，双击，长按）
+- [x] rocketpi_delay_us  （io翻转测量微秒延时）
+- [x] rocketpi_uart_printf （三种不同方式打印输出）
+- [x] rocketpi_uart_echo （USART2 + DMA 空闲中断回显示例）
+- [x] rocketpi_uart_control_led（模拟cjson格式数据，串口控制三个led灯）
+- [x] rocketpi_uart_control_led_cjson（使用cjson库，串口控制三个led灯）
+- [x] rocketpi_uart_ymodem（uart ymodem 发送与接收实现）
+- [x] rocketpi_uart_shell_microrl(microrl shell适配，支持自动补全，历史命令，控制led实例)
+- [x] rocketpi_uart_easylogger （适配easylogger日志，支持不同颜色level日志打印）
+- [x] rocketpi_uart_radar（5.8G微波雷达，USART1 读取并配置参数，同时检测感应状态）
+- [x] rocketpi_i2c_aht30（aht30温湿度传感器驱动示例，一套代码支持软硬件i2c）
+- [x] rocketpi_i2c_at24cxx（EEPROM AT24C02的libdriver读写示例,使用软件i2c）
+- [x] rocketpi_pwm_passive_buzzer（无源蜂鸣器播放音乐示例）
+- [x] rocketpi_pwm_sg90(sg90 舵机来回转动，同时串口打印角度值)
+- [x] rocketpi_pwm_motor(电机驱动：循环慢速→加速→刹车→反转→加速→刹车)
+- [x] rocketpi_hcsr04（hcsr04超声波测距，串口打印距离）
+- [x] rocketpi_adc_mcu_temperature（获取芯片内部温度，中值滤波后打印出来）
+- [x] rocketpi_adc_joystick（ADC双轴遥杆，打印原始12位adc采样值，支持按键）
+- [x] rocketpi_irda（nec 红外解码，串口打印解码值）
+- [ ] rocketpi_ws2812b（ws2812b 可编程LED 30颗灯珠，不同色彩模式驱动示例） 视频待补充
+- [x] rocketpi_spi_lcd_speedtest（1.44寸 spi lcd 240x240 帧率测试）
+- [x] rocketpi_spi_lcd_bitmap（1.44寸 240x240 ST7789屏幕驱动，帧率测试，以及将图片显示在屏幕）
+- [x] rocketpi_spi_lcd_240x240_lvgl（移植lvgl适配屏幕与遥杆输入）
+- [x] rocketpi_i2s（i2s音频驱动，带上位机，任意字符转音频，支持简体中文，粤语，英语，以及任意音频）
+- [x] rocketpi_sdio_card（sdio tf卡驱动示例，读写测试）
+- [x] rocketpi_sdio_card_fatfs（sdio tf卡  fatfs文件系统驱动示例，读写测试）
+- [x] rocketpi_sd_audio_to_i2s（从tf卡中读取音频，播放，屏幕显示频谱图）
+- [x] rocketpi_sd_pic_to_lcd（从sd卡读取轮询图片，显示在屏幕上，动图效果，6fps）
+- [x] rocketpi_usb_cdc（usb 虚拟串口）
+- [x] rocketpi_usb_msc（usb虚拟U盘，使用内部的sram做介质）
+- [x] rocketpi_w25qxx（w26q64jv的驱动示例）
+- [x] rocketpi_flash_littlefs（内部flash+ littlefs文件系统演示示例）
+- [x] rocketpi_w25qxx_littlefs（外部 nor flash w25q64jv + littlefs文件系统演示示例）
+- [x] rocketpi_standby_wkup（低功耗的 standby模式，用户按键唤醒）
+- [x] rocketpi_crc（常见crc多项式计算并验证）
+- [x] rocketpi_mbedtls （测试AES，RSA以及 SHA256）
+- [x] rocketpi_extern_io_check（外部io测试）

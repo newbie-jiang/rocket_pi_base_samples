@@ -1,0 +1,52 @@
+name: Sync Base Samples
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+env:
+  SOURCE_REPO: github.com/newbie-jiang/www.rocketpi.club.git
+  SOURCE_SUBDIR: rocketpi_src/base_samples
+  TARGET_SUBDIR: rocketpi_src/base_samples
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout destination repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone source repository
+        env:
+          SOURCE_PAT: ${{ secrets.SOURCE_REPO_PAT }}
+        run: |
+          if [ -z "$SOURCE_PAT" ]; then
+            echo "SOURCE_REPO_PAT secret is not configured." >&2
+            exit 1
+          fi
+
+          git clone --depth 1 https://$SOURCE_PAT@$SOURCE_REPO source-repo
+
+      - name: Sync directory contents
+        run: |
+          mkdir -p "$TARGET_SUBDIR"
+          rsync -a --delete "source-repo/$SOURCE_SUBDIR/" "$TARGET_SUBDIR/"
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git status --porcelain | grep -q .; then
+            git add -A "$TARGET_SUBDIR"
+            git commit -m "chore: sync base samples"
+            git push
+          else
+            echo "No changes detected; skipping commit."
+          fi
