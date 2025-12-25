@@ -3,7 +3,7 @@
 <title>Static Call Graph - [rocketpi_w25qxx_littlefs\rocketpi_w25qxx_littlefs.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image rocketpi_w25qxx_littlefs\rocketpi_w25qxx_littlefs.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Dec 16 01:29:53 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Dec 26 01:15:09 2025
 <BR><P>
 <H3>Maximum Stack Usage =       1624 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -341,17 +341,16 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[c6]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w25qxx_page_program
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_read
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
+<BR><BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getread
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_prog
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w25qxx_page_program
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_read
 </UL>
 
 <P><STRONG><a name="[e1]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_erase
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount_
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount_
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_traverse_
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_deorphan
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_format_
@@ -360,14 +359,15 @@ Global Symbols
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_relocatingcommit
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_orphaningcommit
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_compact
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_erase
 </UL>
 
 <P><STRONG><a name="[139]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[69]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_cache_zero
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_cache_zero
 </UL>
 
 <P><STRONG><a name="[13a]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -388,10 +388,10 @@ Global Symbols
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LittleFS_Test
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w25qxx_interface_spi_qspi_init
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_opencfg_
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_traverse
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w25qxx_interface_spi_qspi_init
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
 </UL>
 
 <P><STRONG><a name="[13c]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -1040,17 +1040,17 @@ Global Symbols
 <P><STRONG><a name="[55]"></a>lfs_nor_flash_port_format</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lfs_nor_flash_port.o(i.lfs_nor_flash_port_format))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = lfs_nor_flash_port_format &rArr; lfs_nor_flash_hw_init &rArr; w25qxx_init &rArr; a_w25qxx_qspi_write_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_format
+<BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_format
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[56]"></a>lfs_nor_flash_port_mount</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lfs_nor_flash_port.o(i.lfs_nor_flash_port_mount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 440<LI>Call Chain = lfs_nor_flash_port_mount &rArr; lfs_mount &rArr; lfs_mount_ &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
+<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_init
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_nor_flash_hw_deinit
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
@@ -1287,9 +1287,9 @@ Local Symbols
 <P><STRONG><a name="[9a]"></a>UART_SetConfig</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, stm32f4xx_hal_uart.o(i.UART_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = UART_SetConfig &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
@@ -1357,10 +1357,10 @@ Local Symbols
 <P><STRONG><a name="[b8]"></a>lfs_alloc_scan</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, lfs.o(i.lfs_alloc_scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_traverse_
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc_drop
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc
 </UL>
@@ -1368,8 +1368,8 @@ Local Symbols
 <P><STRONG><a name="[bd]"></a>lfs_bd_cmp</STRONG> (Thumb, 102 bytes, Stack size 80 bytes, lfs.o(i.lfs_bd_cmp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = lfs_bd_cmp &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_find_match
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_flush
@@ -1378,8 +1378,8 @@ Local Symbols
 <P><STRONG><a name="[c0]"></a>lfs_bd_crc</STRONG> (Thumb, 90 bytes, Stack size 80 bytes, lfs.o(i.lfs_bd_crc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetchmatch
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitcrc
@@ -1408,9 +1408,9 @@ Local Symbols
 <P><STRONG><a name="[c5]"></a>lfs_bd_prog</STRONG> (Thumb, 178 bytes, Stack size 56 bytes, lfs.o(i.lfs_bd_prog))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = lfs_bd_prog &rArr; lfs_bd_flush &rArr; lfs_bd_cmp &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_flush
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_flush
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_aligndown
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_flushedwrite
@@ -1422,10 +1422,10 @@ Local Symbols
 <P><STRONG><a name="[be]"></a>lfs_bd_read</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, lfs.o(i.lfs_bd_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alignup
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_aligndown
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_parent_match
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
@@ -1595,8 +1595,7 @@ Local Symbols
 <P><STRONG><a name="[dd]"></a>lfs_dir_commitcrc</STRONG> (Thumb, 470 bytes, Stack size 80 bytes, lfs.o(i.lfs_dir_commitcrc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = lfs_dir_commitcrc &rArr; lfs_dir_commitattr &rArr; lfs_dir_commitprog &rArr; lfs_bd_prog &rArr; lfs_bd_flush &rArr; lfs_bd_cmp &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_frombe32
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitattr
@@ -1605,6 +1604,7 @@ Local Symbols
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_prog
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_crc
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alignup
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_relocatingcommit
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_compact
@@ -1613,8 +1613,8 @@ Local Symbols
 <P><STRONG><a name="[dc]"></a>lfs_dir_commitprog</STRONG> (Thumb, 58 bytes, Stack size 32 bytes, lfs.o(i.lfs_dir_commitprog))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = lfs_dir_commitprog &rArr; lfs_bd_prog &rArr; lfs_bd_flush &rArr; lfs_bd_cmp &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_prog
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_prog
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_compact
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitattr
@@ -1623,8 +1623,7 @@ Local Symbols
 <P><STRONG><a name="[de]"></a>lfs_dir_compact</STRONG> (Thumb, 542 bytes, Stack size 136 bytes, lfs.o(i.lfs_dir_compact))
 <BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = lfs_dir_compact &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_isnull
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
@@ -1641,6 +1640,7 @@ Local Symbols
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitattr
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_erase
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_splittingcompact
@@ -1664,8 +1664,7 @@ Local Symbols
 <P><STRONG><a name="[eb]"></a>lfs_dir_fetchmatch</STRONG> (Thumb, 1084 bytes, Stack size 152 bytes, lfs.o(i.lfs_dir_fetchmatch))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tole32
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_dsize
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
@@ -1674,6 +1673,7 @@ Local Symbols
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_frombe32
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_crc
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_crc
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount_
@@ -1685,12 +1685,12 @@ Local Symbols
 <P><STRONG><a name="[ed]"></a>lfs_dir_find</STRONG> (Thumb, 336 bytes, Stack size 88 bytes, lfs.o(i.lfs_dir_find))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = lfs_dir_find &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcspn
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strspn
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
+<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_get
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetchmatch
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcspn
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strspn
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_opencfg_
 </UL>
@@ -1734,11 +1734,11 @@ Local Symbols
 <P><STRONG><a name="[f2]"></a>lfs_dir_getread</STRONG> (Thumb, 226 bytes, Stack size 64 bytes, lfs.o(i.lfs_dir_getread))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = lfs_dir_getread &rArr; lfs_dir_getslice &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getslice
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alignup
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_aligndown
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_flushedread
@@ -1747,13 +1747,13 @@ Local Symbols
 <P><STRONG><a name="[f1]"></a>lfs_dir_getslice</STRONG> (Thumb, 300 bytes, Stack size 72 bytes, lfs.o(i.lfs_dir_getslice))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = lfs_dir_getslice &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_isdelete
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_isdelete
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_dsize
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_gstate_hasmovehere
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_frombe32
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getread
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_get
@@ -1767,8 +1767,7 @@ Local Symbols
 <P><STRONG><a name="[d7]"></a>lfs_dir_orphaningcommit</STRONG> (Thumb, 848 bytes, Stack size 160 bytes, lfs.o(i.lfs_dir_orphaningcommit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1048<LI>Call Chain = lfs_dir_orphaningcommit &rArr; lfs_dir_relocatingcommit &rArr; lfs_dir_splittingcompact &rArr; lfs_dir_split &rArr; lfs_dir_compact &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_cmp
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_gstate_hasmovehere
@@ -1780,6 +1779,7 @@ Local Symbols
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_flush
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_relocatingcommit
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getgstate
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_deorphan
@@ -1789,8 +1789,7 @@ Local Symbols
 <P><STRONG><a name="[f6]"></a>lfs_dir_relocatingcommit</STRONG> (Thumb, 746 bytes, Stack size 128 bytes, lfs.o(i.lfs_dir_relocatingcommit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 888<LI>Call Chain = lfs_dir_relocatingcommit &rArr; lfs_dir_splittingcompact &rArr; lfs_dir_split &rArr; lfs_dir_compact &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_cmp
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_gstate_xor
@@ -1803,6 +1802,7 @@ Local Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetch
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitcrc
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commitattr
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_orphaningcommit
 </UL>
@@ -1836,11 +1836,11 @@ Local Symbols
 <P><STRONG><a name="[e2]"></a>lfs_dir_traverse</STRONG> (Thumb, 644 bytes, Stack size 264 bytes, lfs.o(i.lfs_dir_traverse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = lfs_dir_traverse &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_dsize
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_dsize
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_frombe32
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_splittingcompact
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_relocatingcommit
@@ -1868,11 +1868,11 @@ Local Symbols
 <P><STRONG><a name="[f5]"></a>lfs_file_flush</STRONG> (Thumb, 230 bytes, Stack size 112 bytes, lfs.o(i.lfs_file_flush))
 <BR><BR>[Stack]<UL><LI>Max Depth = 712<LI>Call Chain = lfs_file_flush &rArr; lfs_file_flushedwrite &rArr; lfs_ctz_extend &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_relocate
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_flushedwrite
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_flushedread
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_flush
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_read
@@ -1909,8 +1909,7 @@ Local Symbols
 <P><STRONG><a name="[105]"></a>lfs_file_opencfg_</STRONG> (Thumb, 564 bytes, Stack size 88 bytes, lfs.o(i.lfs_file_opencfg_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1424<LI>Call Chain = lfs_file_opencfg_ &rArr; lfs_fs_forceconsistency &rArr; lfs_fs_desuperblock &rArr; lfs_dir_commit &rArr; lfs_fs_deorphan &rArr; lfs_dir_orphaningcommit &rArr; lfs_dir_relocatingcommit &rArr; lfs_dir_splittingcompact &rArr; lfs_dir_split &rArr; lfs_dir_compact &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_namelen
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_namelen
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_islast
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_isdir
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
@@ -1922,6 +1921,7 @@ Local Symbols
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commit
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_ctz_fromle32
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_cache_zero
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_open
 </UL>
@@ -1938,13 +1938,13 @@ Local Symbols
 <P><STRONG><a name="[104]"></a>lfs_file_relocate</STRONG> (Thumb, 228 bytes, Stack size 64 bytes, lfs.o(i.lfs_file_relocate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 512<LI>Call Chain = lfs_file_relocate &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getread
+<BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getread
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_cache_zero
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_read
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_prog
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_bd_erase
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_outline
@@ -1974,15 +1974,15 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[113]"></a>lfs_format_</STRONG> (Thumb, 188 bytes, Stack size 104 bytes, lfs.o(i.lfs_format_), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_superblock_tole32
+<BR><BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_superblock_tole32
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_min
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_init
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetch
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_commit
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_alloc
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_deinit
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
 <P><STRONG><a name="[db]"></a>lfs_frombe32</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lfs.o(i.lfs_frombe32))
@@ -2022,8 +2022,7 @@ Local Symbols
 <P><STRONG><a name="[d8]"></a>lfs_fs_deorphan</STRONG> (Thumb, 444 bytes, Stack size 192 bytes, lfs.o(i.lfs_fs_deorphan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1240<LI>Call Chain = lfs_fs_deorphan &rArr; lfs_dir_orphaningcommit &rArr; lfs_dir_relocatingcommit &rArr; lfs_dir_splittingcompact &rArr; lfs_dir_split &rArr; lfs_dir_compact &rArr; lfs_alloc &rArr; lfs_alloc_scan &rArr; lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_tole32
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_issync
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_isnull
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_fromle32
@@ -2035,6 +2034,7 @@ Local Symbols
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_getgstate
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_get
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetch
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_forceconsistency
@@ -2123,13 +2123,13 @@ Local Symbols
 <P><STRONG><a name="[bb]"></a>lfs_fs_traverse_</STRONG> (Thumb, 330 bytes, Stack size 104 bytes, lfs.o(i.lfs_fs_traverse_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 408<LI>Call Chain = lfs_fs_traverse_ &rArr; lfs_dir_fetch &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tortoise_detectcycles
+<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tortoise_detectcycles
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_isnull
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_get
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetch
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_ctz_traverse
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_ctz_fromle32
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_fs_size_
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc_scan
@@ -2224,8 +2224,7 @@ Local Symbols
 <P><STRONG><a name="[11c]"></a>lfs_mount_</STRONG> (Thumb, 560 bytes, Stack size 152 bytes, lfs.o(i.lfs_mount_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = lfs_mount_ &rArr; lfs_dir_fetchmatch &rArr; lfs_bd_crc &rArr; lfs_bd_read
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tortoise_detectcycles
+<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tortoise_detectcycles
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_tag_isdelete
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_superblock_fromle32
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_pair_isnull
@@ -2237,6 +2236,7 @@ Local Symbols
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_dir_fetchmatch
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_deinit
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_alloc_drop
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_mount
@@ -2306,10 +2306,10 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[107]"></a>lfs_path_islast</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lfs.o(i.lfs_path_islast))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = lfs_path_islast &rArr; strspn
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = lfs_path_islast &rArr; lfs_path_namelen &rArr; strcspn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strspn
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_namelen
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_path_namelen
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strspn
 </UL>
 <BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_file_opencfg_
 </UL>
@@ -2396,20 +2396,20 @@ Local Symbols
 <P><STRONG><a name="[5d]"></a>lfs_flash_port_erase</STRONG> (Thumb, 76 bytes, Stack size 32 bytes, lfs_flash_port.o(i.lfs_flash_port_erase))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = lfs_flash_port_erase &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Unlock
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Lock
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lfs_flash_port.o(.constdata)
 </UL>
 <P><STRONG><a name="[5c]"></a>lfs_flash_port_prog</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, lfs_flash_port.o(i.lfs_flash_port_prog))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = lfs_flash_port_prog &rArr; lfs_flash_port_program &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_range_valid
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_program
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Unlock
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Unlock
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Lock
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_range_valid
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfs_flash_port_program
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lfs_flash_port.o(.constdata)
 </UL>
